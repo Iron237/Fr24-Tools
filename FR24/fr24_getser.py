@@ -88,7 +88,7 @@ def get_flights(apcode):#调用爬虫请求json文件
     
     data_mode = ['departures', 'arrivals']
     # 调用你的get_flight_data函数
-    final_a_path,final_d_path = frpc.run(apcode, data_mode, jet_type,ip_address)
+    final_a_path,final_d_path = frpc.run(apcode, data_mode,ip_address)
     
     # if isinstance(final_a_path, tuple) and final_a_path[1] == 500:  # 检查到达数据路径是否返回了错误信息
     #     return jsonify({"message": final_a_path[0]}), 500  # 返回错误信息

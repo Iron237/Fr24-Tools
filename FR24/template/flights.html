@@ -15,6 +15,22 @@
         th {
             background-color: #f2f2f2;
         }
+        /* 这部分控制鼠标悬停时表格行的样式 */
+        .table tr:hover {
+            background-color: #9dff7f;  /* 修改此处，例如 #FFE4B5 */
+        }
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 16px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <script>
@@ -31,34 +47,38 @@
     }
     </script>
 <body>
+    <div id="title" style="text-align: center;">
+    <h1>{{ airport_code }}航班信息</h1>
     <button style="background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            transition-duration: 0.4s;"
-        onmouseover="this.style.backgroundColor='#008CBA'" 
-        onmouseout="this.style.backgroundColor='#4CAF50'"
-        onclick="switchTables()" style="text-align: center;">
-        切换航班信息
-        </button>
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;"
+    onmouseover="this.style.backgroundColor='#008CBA'" 
+    onmouseout="this.style.backgroundColor='#4CAF50'"
+    onclick="switchTables()" style="text-align: center;">
+    切换航班信息
+    </button>
+    </div>
         <div id="arrivals" style="display: block; text-align: center;">
-        <h1>{{ airport_code }}到达航班信息</h1>
-        <h2>可能感兴趣的航班</h2>
+        <h2>到达航班信息</h2>
+    
+        <h3>可能感兴趣的航班</h3>
         {{ a_i_table|safe }}  <!-- 使用Jinja2的safe过滤器来插入HTML代码 -->
-        <h2>可能一般的航班</h2>
+        <h3>可能一般的航班</h3>
         {{ a_n_table|safe }}  
     </div>
     <div id="departures" style="display: none; text-align: center;">
-        <h1>{{ airport_code }}出发航班信息</h1>
-        <h2>可能感兴趣的航班</h2>
+        <h2>出发航班信息</h2>
+        <h3>可能感兴趣的航班</h3>
         {{ d_i_table|safe }}  
-        <h2>可能一般的航班</h2>
+        <h3>可能一般的航班</h3>
         {{ d_n_table|safe }}  
     </div>
 </body>
