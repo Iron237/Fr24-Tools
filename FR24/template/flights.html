@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>航班信息</title>
+    <title>{{ airport_code }}航班信息</title>
     <style>
         /* 你可以在这里添加CSS样式来美化你的表格 */
         table {
@@ -31,15 +31,30 @@
     }
     </script>
 <body>
-    <button onclick="switchTables()">切换航班信息</button>
-    <div id="arrivals" style="display: block;">
+    <button style="background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition-duration: 0.4s;"
+        onmouseover="this.style.backgroundColor='#008CBA'" 
+        onmouseout="this.style.backgroundColor='#4CAF50'"
+        onclick="switchTables()" style="text-align: center;">
+        切换航班信息
+        </button>
+        <div id="arrivals" style="display: block; text-align: center;">
         <h1>{{ airport_code }}到达航班信息</h1>
         <h2>可能感兴趣的航班</h2>
         {{ a_i_table|safe }}  <!-- 使用Jinja2的safe过滤器来插入HTML代码 -->
         <h2>可能一般的航班</h2>
         {{ a_n_table|safe }}  
     </div>
-    <div id="departures" style="display: none;">
+    <div id="departures" style="display: none; text-align: center;">
         <h1>{{ airport_code }}出发航班信息</h1>
         <h2>可能感兴趣的航班</h2>
         {{ d_i_table|safe }}  

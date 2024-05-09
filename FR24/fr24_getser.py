@@ -24,13 +24,10 @@ limiter = Limiter(app=app, key_func=get_remote_address) # type: ignore
 #机型筛选依据
 jet_type = ["A33",'A34',"A35","A38","B78","B77","B76","B74","B75","B78","C9",'74','76','75','77','78','33','35','380','C27']
 
-#---------------------------------------------------------------
 #返回首页HTML
 @app.route('/')
 def home():
     return render_template('FR24_flight_data.html')
-
-#---------------------------------------------------------------
 
 #接受HTTP请求输入机场代码
 @app.route('/input_airport_code', methods=['POST'])
@@ -60,8 +57,6 @@ def input_airport_code():
     output_filename = f'{airport_code}_{timestamp}.xlsx'
 
     return jsonify({'redirect': f'/{airport_code}/flights'})
-
-#---------------------------------------------------------------
 
 #获取航班数据并返回文件路径
 '''def get_flights(apcode,output_filename):#请求excel文件的函数
@@ -104,8 +99,6 @@ def get_flights(apcode):#调用爬虫请求json文件
     print(f'{final_a_path},{final_d_path}')
     return final_a_path,final_d_path#输出2个json文件的路径
 
-#---------------------------------------------------------------
-
 @app.route('/<apcode>/flights')
 def flights(apcode):#与html交互
     arrivals_data_path, departures_data_path = get_flights(apcode)
@@ -117,7 +110,6 @@ def flights(apcode):#与html交互
     d_i_table_html,d_n_table_html = to_DataFrame(departures_data_path)
     
     return render_template('flights.html', a_i_table=a_i_table_html, a_n_table=a_n_table_html,airport_code=apcode, d_i_table=d_i_table_html, d_n_table=d_n_table_html)
-
 
 def process_flights_data(flight_data_path):#数据筛选
     if flight_data_path[-21:-13] != 'arrivals':#判断json数据是or到达
@@ -153,10 +145,17 @@ def process_flights_data(flight_data_path):#数据筛选
     return interested_aircraft, normal_aircraft
 
 def to_DataFrame(data_path):#绘制表格
+    if data_path[-21:-13] != 'arrivals':#判断json数据是or到达
+        word1 = '起飞'
+        word2 = '到达'
+    else:
+        word1 = '到达'
+        word2 = '起飞'
+
     a_interested_aircraft, a_normal_aircraft = process_flights_data(data_path)
     # 将航班信息转换为DataFrame
-    idf = pd.DataFrame(a_interested_aircraft, columns=["航班号", "计划到达时间", "起飞地机场", "注册号", "机型"])
-    ndf = pd.DataFrame(a_normal_aircraft, columns=["航班号", "计划到达时间", "起飞地机场", "注册号", "机型"])
+    idf = pd.DataFrame(a_interested_aircraft, columns=["航班号", f'计划{word1}时间', f"{word2}地机场", "注册号", "机型"])
+    ndf = pd.DataFrame(a_normal_aircraft, columns=["航班号", f'计划{word1}时间', f"{word2}地机场", "注册号", "机型"])
     # 使用Flask绘制表格
     a_i_table_html = idf.to_html(index=False)
     a_n_table_html = ndf.to_html(index=False)
