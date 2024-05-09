@@ -1,4 +1,0 @@
-{
-    "python.analysis.typeCheckingMode": "basic",
-    "cmake.sourceDirectory": "${workspaceFolder}/C++ Test/Pa0/pa0"
-}
