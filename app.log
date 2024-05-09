@@ -1,0 +1,509 @@
+2024-05-09 12:11:19,881 - INFO - 192.168.43.170 - - [09/May/2024 12:11:19] "POST /input_airport_code HTTP/1.1" 200 -
+2024-05-09 12:37:12,878 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:1145
+ * Running on http://192.168.43.170:1145
+2024-05-09 12:37:12,880 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-09 12:37:26,244 - INFO - 192.168.43.170 - - [09/May/2024 12:37:26] "GET / HTTP/1.1" 200 -
+2024-05-09 12:37:26,327 - INFO - 192.168.43.170 - - [09/May/2024 12:37:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-05-09 12:37:30,597 - INFO - 开始获取航班数据
+2024-05-09 12:37:30,597 - INFO - 正在发送请求
+2024-05-09 12:37:32,268 - INFO - 开始获取航班数据
+2024-05-09 12:37:32,268 - INFO - 正在发送请求
+2024-05-09 12:37:33,782 - INFO - 状态码: 200
+2024-05-09 12:37:33,782 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:33,784 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:33,784 - INFO - 开始获取航班数据
+2024-05-09 12:37:33,784 - INFO - 正在发送请求
+2024-05-09 12:37:34,480 - INFO - 状态码: 200
+2024-05-09 12:37:34,480 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:34,482 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:34,482 - INFO - 开始获取航班数据
+2024-05-09 12:37:34,482 - INFO - 正在发送请求
+2024-05-09 12:37:35,636 - INFO - 状态码: 200
+2024-05-09 12:37:35,636 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:35,639 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:35,639 - INFO - 开始获取航班数据
+2024-05-09 12:37:35,639 - INFO - 正在发送请求
+2024-05-09 12:37:36,327 - INFO - 状态码: 200
+2024-05-09 12:37:36,327 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:36,330 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:36,330 - INFO - 开始获取航班数据
+2024-05-09 12:37:36,330 - INFO - 正在发送请求
+2024-05-09 12:37:37,429 - INFO - 状态码: 200
+2024-05-09 12:37:37,429 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:37,431 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:37,431 - INFO - 开始获取航班数据
+2024-05-09 12:37:37,431 - INFO - 正在发送请求
+2024-05-09 12:37:37,530 - INFO - 状态码: 200
+2024-05-09 12:37:37,530 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:37,532 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:37,533 - INFO - 开始获取航班数据
+2024-05-09 12:37:37,533 - INFO - 正在发送请求
+2024-05-09 12:37:39,299 - INFO - 状态码: 200
+2024-05-09 12:37:39,299 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:39,301 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:39,302 - INFO - 开始获取航班数据
+2024-05-09 12:37:39,302 - INFO - 正在发送请求
+2024-05-09 12:37:39,389 - INFO - 状态码: 200
+2024-05-09 12:37:39,389 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:39,392 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:39,392 - INFO - 开始获取航班数据
+2024-05-09 12:37:39,392 - INFO - 正在发送请求
+2024-05-09 12:37:41,149 - INFO - 状态码: 200
+2024-05-09 12:37:41,149 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:41,171 - INFO - 写入完成，结束获取航班数据
+2024-05-09 12:37:41,269 - INFO - 状态码: 200
+2024-05-09 12:37:41,274 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:41,282 - INFO - 写入完成，结束获取航班数据
+2024-05-09 12:37:42,113 - INFO - 开始获取航班数据
+2024-05-09 12:37:42,113 - INFO - 正在发送请求
+2024-05-09 12:37:42,244 - INFO - 开始获取航班数据
+2024-05-09 12:37:42,244 - INFO - 正在发送请求
+2024-05-09 12:37:43,988 - INFO - 状态码: 200
+2024-05-09 12:37:43,988 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:43,990 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:43,991 - INFO - 开始获取航班数据
+2024-05-09 12:37:43,991 - INFO - 正在发送请求
+2024-05-09 12:37:44,191 - INFO - 状态码: 200
+2024-05-09 12:37:44,191 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:44,194 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:44,194 - INFO - 开始获取航班数据
+2024-05-09 12:37:44,194 - INFO - 正在发送请求
+2024-05-09 12:37:45,813 - INFO - 状态码: 200
+2024-05-09 12:37:45,813 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:45,814 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:45,815 - INFO - 开始获取航班数据
+2024-05-09 12:37:45,815 - INFO - 正在发送请求
+2024-05-09 12:37:45,988 - INFO - 状态码: 200
+2024-05-09 12:37:45,988 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:45,989 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:45,989 - INFO - 开始获取航班数据
+2024-05-09 12:37:45,989 - INFO - 正在发送请求
+2024-05-09 12:37:46,803 - INFO - 状态码: 200
+2024-05-09 12:37:46,803 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:46,805 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:46,805 - INFO - 开始获取航班数据
+2024-05-09 12:37:46,805 - INFO - 正在发送请求
+2024-05-09 12:37:47,090 - INFO - 状态码: 200
+2024-05-09 12:37:47,090 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:47,092 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:47,092 - INFO - 开始获取航班数据
+2024-05-09 12:37:47,092 - INFO - 正在发送请求
+2024-05-09 12:37:47,848 - INFO - 状态码: 200
+2024-05-09 12:37:47,848 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:47,849 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:47,850 - INFO - 开始获取航班数据
+2024-05-09 12:37:47,850 - INFO - 正在发送请求
+2024-05-09 12:37:48,172 - INFO - 状态码: 200
+2024-05-09 12:37:48,172 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:48,174 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 12:37:48,174 - INFO - 开始获取航班数据
+2024-05-09 12:37:48,174 - INFO - 正在发送请求
+2024-05-09 12:37:48,875 - INFO - 状态码: 200
+2024-05-09 12:37:48,875 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:48,876 - INFO - 写入完成，结束获取航班数据
+2024-05-09 12:37:49,386 - ERROR - Exception on /input_airport_code [POST]
+Traceback (most recent call last):
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 55, in input_airport_code
+    return get_flights(airport_code,output_filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 66, in get_flights
+    flights_list = frpc.run(apcode, data_mode, jet_type, output_filename)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24爬虫test.py", line 164, in run
+    extract_departure_aircraft_type(f'{file_path}\\datas\\{airport_code}\\{airport_code}_departures_flights.json', workbook, jet_type)
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24爬虫test.py", line 64, in extract_departure_aircraft_type
+    all_flights = json.load(f)
+                  ^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 17 (char 17)
+2024-05-09 12:37:49,414 - INFO - 192.168.43.170 - - [09/May/2024 12:37:49] "[35m[1mPOST /input_airport_code HTTP/1.1[0m" 500 -
+2024-05-09 12:37:49,968 - INFO - 状态码: 200
+2024-05-09 12:37:49,968 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 12:37:49,969 - INFO - 写入完成，结束获取航班数据
+2024-05-09 12:37:50,476 - ERROR - Exception on /input_airport_code [POST]
+Traceback (most recent call last):
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 55, in input_airport_code
+    return get_flights(airport_code,output_filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 66, in get_flights
+    flights_list = frpc.run(apcode, data_mode, jet_type, output_filename)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24爬虫test.py", line 164, in run
+    extract_departure_aircraft_type(f'{file_path}\\datas\\{airport_code}\\{airport_code}_departures_flights.json', workbook, jet_type)
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24爬虫test.py", line 64, in extract_departure_aircraft_type
+    all_flights = json.load(f)
+                  ^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 2 column 17 (char 17)
+2024-05-09 12:37:50,478 - INFO - 192.168.43.170 - - [09/May/2024 12:37:50] "[35m[1mPOST /input_airport_code HTTP/1.1[0m" 500 -
+2024-05-09 13:05:13,811 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:1145
+ * Running on http://192.168.43.170:1145
+2024-05-09 13:05:13,812 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-09 13:05:25,979 - INFO - 开始获取航班数据
+2024-05-09 13:05:25,979 - INFO - 正在发送请求
+2024-05-09 13:05:27,135 - INFO - 状态码: 200
+2024-05-09 13:05:27,136 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:27,140 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:27,140 - INFO - 开始获取航班数据
+2024-05-09 13:05:27,141 - INFO - 正在发送请求
+2024-05-09 13:05:29,062 - INFO - 状态码: 200
+2024-05-09 13:05:29,062 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:29,064 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:29,064 - INFO - 开始获取航班数据
+2024-05-09 13:05:29,064 - INFO - 正在发送请求
+2024-05-09 13:05:30,968 - INFO - 状态码: 200
+2024-05-09 13:05:30,969 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:30,970 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:30,971 - INFO - 开始获取航班数据
+2024-05-09 13:05:30,971 - INFO - 正在发送请求
+2024-05-09 13:05:32,080 - INFO - 状态码: 200
+2024-05-09 13:05:32,081 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:32,083 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:32,083 - INFO - 开始获取航班数据
+2024-05-09 13:05:32,083 - INFO - 正在发送请求
+2024-05-09 13:05:33,100 - INFO - 状态码: 200
+2024-05-09 13:05:33,100 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:33,101 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:05:33,829 - INFO - 开始获取航班数据
+2024-05-09 13:05:33,829 - INFO - 正在发送请求
+2024-05-09 13:05:35,705 - INFO - 状态码: 200
+2024-05-09 13:05:35,705 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:35,707 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:35,707 - INFO - 开始获取航班数据
+2024-05-09 13:05:35,707 - INFO - 正在发送请求
+2024-05-09 13:05:37,580 - INFO - 状态码: 200
+2024-05-09 13:05:37,580 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:37,582 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:37,582 - INFO - 开始获取航班数据
+2024-05-09 13:05:37,582 - INFO - 正在发送请求
+2024-05-09 13:05:39,576 - INFO - 状态码: 200
+2024-05-09 13:05:39,576 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:39,577 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:39,577 - INFO - 开始获取航班数据
+2024-05-09 13:05:39,577 - INFO - 正在发送请求
+2024-05-09 13:05:41,473 - INFO - 状态码: 200
+2024-05-09 13:05:41,473 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:41,475 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:05:41,476 - INFO - 开始获取航班数据
+2024-05-09 13:05:41,476 - INFO - 正在发送请求
+2024-05-09 13:05:43,479 - INFO - 状态码: 200
+2024-05-09 13:05:43,479 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:05:43,504 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:05:44,002 - ERROR - Exception on /input_airport_code [POST]
+Traceback (most recent call last):
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 55, in input_airport_code
+    return get_flights(airport_code,output_filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 67, in get_flights
+    flights_list = frpc.run(apcode, data_mode, jet_type, output_filename,ip_address)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24爬虫test.py", line 164, in run
+    extract_departure_aircraft_type(f'{output_path}\\{airport_code}_departures_flights.json', workbook, jet_type)
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24爬虫test.py", line 63, in extract_departure_aircraft_type
+    with open(filename, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\EddieChen\\Documents\\works\\clear workspace\\FR24\\datas\\temp\\192.168.43.170\\XMN\\XMN_departures_flights.json'
+2024-05-09 13:05:44,006 - INFO - 192.168.43.170 - - [09/May/2024 13:05:44] "[35m[1mPOST /input_airport_code HTTP/1.1[0m" 500 -
+2024-05-09 13:15:08,177 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:1145
+ * Running on http://192.168.43.170:1145
+2024-05-09 13:15:08,177 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-09 13:15:09,799 - INFO - 192.168.43.170 - - [09/May/2024 13:15:09] "GET / HTTP/1.1" 200 -
+2024-05-09 13:15:10,065 - INFO - 192.168.43.170 - - [09/May/2024 13:15:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-05-09 13:15:13,275 - INFO - 开始获取航班数据
+2024-05-09 13:15:13,275 - INFO - 正在发送请求
+2024-05-09 13:15:14,363 - INFO - 状态码: 200
+2024-05-09 13:15:14,363 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:14,365 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:14,365 - INFO - 开始获取航班数据
+2024-05-09 13:15:14,365 - INFO - 正在发送请求
+2024-05-09 13:15:15,383 - INFO - 状态码: 200
+2024-05-09 13:15:15,383 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:15,385 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:15,385 - INFO - 开始获取航班数据
+2024-05-09 13:15:15,385 - INFO - 正在发送请求
+2024-05-09 13:15:16,363 - INFO - 状态码: 200
+2024-05-09 13:15:16,363 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:16,365 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:16,366 - INFO - 开始获取航班数据
+2024-05-09 13:15:16,366 - INFO - 正在发送请求
+2024-05-09 13:15:19,369 - INFO - 状态码: 200
+2024-05-09 13:15:19,369 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:19,371 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:19,371 - INFO - 开始获取航班数据
+2024-05-09 13:15:19,371 - INFO - 正在发送请求
+2024-05-09 13:15:20,402 - INFO - 状态码: 200
+2024-05-09 13:15:20,402 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:20,402 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:15:20,838 - INFO - 开始获取航班数据
+2024-05-09 13:15:20,838 - INFO - 正在发送请求
+2024-05-09 13:15:21,937 - INFO - 状态码: 200
+2024-05-09 13:15:21,937 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:21,939 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:21,939 - INFO - 开始获取航班数据
+2024-05-09 13:15:21,939 - INFO - 正在发送请求
+2024-05-09 13:15:23,833 - INFO - 状态码: 200
+2024-05-09 13:15:23,833 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:23,834 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:23,834 - INFO - 开始获取航班数据
+2024-05-09 13:15:23,834 - INFO - 正在发送请求
+2024-05-09 13:15:25,622 - INFO - 状态码: 200
+2024-05-09 13:15:25,622 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:25,624 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:25,624 - INFO - 开始获取航班数据
+2024-05-09 13:15:25,624 - INFO - 正在发送请求
+2024-05-09 13:15:27,485 - INFO - 状态码: 200
+2024-05-09 13:15:27,485 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:27,509 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:15:27,509 - INFO - 开始获取航班数据
+2024-05-09 13:15:27,509 - INFO - 正在发送请求
+2024-05-09 13:15:28,575 - INFO - 状态码: 200
+2024-05-09 13:15:28,575 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:15:28,576 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:15:29,269 - ERROR - Exception on /input_airport_code [POST]
+Traceback (most recent call last):
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 55, in input_airport_code
+    return get_flights(airport_code,output_filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 74, in get_flights
+    return send_file(f'{file_path}\\datas\\{apcode}\\{output_filename}', as_attachment=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 499, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 427, in send_file
+    stat = os.stat(path)
+           ^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'C:\\Users\\EddieChen\\Documents\\works\\clear workspace\\FR24\\datas\\XMN\\XMN_2024-05-09 13.15.07.xlsx'
+2024-05-09 13:15:29,272 - INFO - 192.168.43.170 - - [09/May/2024 13:15:29] "[35m[1mPOST /input_airport_code HTTP/1.1[0m" 500 -
+2024-05-09 13:17:33,708 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:1145
+ * Running on http://192.168.43.170:1145
+2024-05-09 13:17:33,708 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-09 13:17:33,803 - INFO - 192.168.43.170 - - [09/May/2024 13:17:33] "GET / HTTP/1.1" 200 -
+2024-05-09 13:17:34,045 - INFO - 192.168.43.170 - - [09/May/2024 13:17:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-05-09 13:17:36,140 - INFO - 开始获取航班数据
+2024-05-09 13:17:36,141 - INFO - 正在发送请求
+2024-05-09 13:17:37,170 - INFO - 状态码: 200
+2024-05-09 13:17:37,170 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:37,172 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:37,172 - INFO - 开始获取航班数据
+2024-05-09 13:17:37,172 - INFO - 正在发送请求
+2024-05-09 13:17:39,030 - INFO - 状态码: 200
+2024-05-09 13:17:39,030 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:39,032 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:39,032 - INFO - 开始获取航班数据
+2024-05-09 13:17:39,032 - INFO - 正在发送请求
+2024-05-09 13:17:40,099 - INFO - 状态码: 200
+2024-05-09 13:17:40,099 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:40,101 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:40,101 - INFO - 开始获取航班数据
+2024-05-09 13:17:40,101 - INFO - 正在发送请求
+2024-05-09 13:17:41,954 - INFO - 状态码: 200
+2024-05-09 13:17:41,954 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:41,956 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:41,956 - INFO - 开始获取航班数据
+2024-05-09 13:17:41,956 - INFO - 正在发送请求
+2024-05-09 13:17:42,863 - INFO - 状态码: 200
+2024-05-09 13:17:42,863 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:42,863 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:17:43,676 - INFO - 开始获取航班数据
+2024-05-09 13:17:43,676 - INFO - 正在发送请求
+2024-05-09 13:17:44,694 - INFO - 状态码: 200
+2024-05-09 13:17:44,694 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:44,696 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:44,696 - INFO - 开始获取航班数据
+2024-05-09 13:17:44,697 - INFO - 正在发送请求
+2024-05-09 13:17:46,549 - INFO - 状态码: 200
+2024-05-09 13:17:46,549 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:46,551 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:46,551 - INFO - 开始获取航班数据
+2024-05-09 13:17:46,552 - INFO - 正在发送请求
+2024-05-09 13:17:48,469 - INFO - 状态码: 200
+2024-05-09 13:17:48,469 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:48,470 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:48,470 - INFO - 开始获取航班数据
+2024-05-09 13:17:48,470 - INFO - 正在发送请求
+2024-05-09 13:17:50,453 - INFO - 状态码: 200
+2024-05-09 13:17:50,453 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:50,479 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:17:50,480 - INFO - 开始获取航班数据
+2024-05-09 13:17:50,480 - INFO - 正在发送请求
+2024-05-09 13:17:51,474 - INFO - 状态码: 200
+2024-05-09 13:17:51,474 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:17:51,475 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:17:52,135 - ERROR - Exception on /input_airport_code [POST]
+Traceback (most recent call last):
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 55, in input_airport_code
+    return get_flights(airport_code,output_filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\Documents\works\clear workspace\FR24\fr24_getser.py", line 74, in get_flights
+    return send_file(f'{final_path}', as_attachment=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\helpers.py", line 499, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EddieChen\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\utils.py", line 479, in send_file
+    file = open(path, "rb")  # type: ignore
+           ^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\EddieChen\\Documents\\works\\clear workspace\\FR24'
+2024-05-09 13:17:52,138 - INFO - 192.168.43.170 - - [09/May/2024 13:17:52] "[35m[1mPOST /input_airport_code HTTP/1.1[0m" 500 -
+2024-05-09 13:18:13,329 - INFO - 192.168.43.170 - - [09/May/2024 13:18:13] "GET / HTTP/1.1" 200 -
+2024-05-09 13:18:13,380 - INFO - 192.168.43.170 - - [09/May/2024 13:18:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-05-09 13:18:21,484 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:1145
+ * Running on http://192.168.43.170:1145
+2024-05-09 13:18:21,484 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-09 13:18:21,489 - INFO -  * Restarting with stat
+2024-05-09 13:18:23,707 - WARNING -  * Debugger is active!
+2024-05-09 13:18:23,721 - INFO -  * Debugger PIN: 141-754-781
+2024-05-09 13:20:12,265 - INFO -  * Detected change in 'C:\\Users\\EddieChen\\Documents\\works\\clear workspace\\FR24\\fr24_getser.py', reloading
+2024-05-09 13:20:15,112 - INFO -  * Restarting with stat
+2024-05-09 13:21:17,276 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:1145
+ * Running on http://192.168.43.170:1145
+2024-05-09 13:21:17,276 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-09 13:21:17,279 - INFO -  * Restarting with stat
+2024-05-09 13:21:19,561 - WARNING -  * Debugger is active!
+2024-05-09 13:21:19,573 - INFO -  * Debugger PIN: 141-754-781
+2024-05-09 13:21:19,636 - INFO - 192.168.43.170 - - [09/May/2024 13:21:19] "GET / HTTP/1.1" 200 -
+2024-05-09 13:21:19,690 - INFO - 192.168.43.170 - - [09/May/2024 13:21:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2024-05-09 13:21:22,079 - INFO - 开始获取航班数据
+2024-05-09 13:21:22,079 - INFO - 正在发送请求
+2024-05-09 13:21:23,197 - INFO - 状态码: 200
+2024-05-09 13:21:23,197 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:23,199 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:23,200 - INFO - 开始获取航班数据
+2024-05-09 13:21:23,200 - INFO - 正在发送请求
+2024-05-09 13:21:25,079 - INFO - 状态码: 200
+2024-05-09 13:21:25,079 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:25,082 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:25,082 - INFO - 开始获取航班数据
+2024-05-09 13:21:25,082 - INFO - 正在发送请求
+2024-05-09 13:21:27,065 - INFO - 状态码: 200
+2024-05-09 13:21:27,065 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:27,066 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:27,067 - INFO - 开始获取航班数据
+2024-05-09 13:21:27,067 - INFO - 正在发送请求
+2024-05-09 13:21:30,096 - INFO - 状态码: 200
+2024-05-09 13:21:30,096 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:30,097 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:30,098 - INFO - 开始获取航班数据
+2024-05-09 13:21:30,098 - INFO - 正在发送请求
+2024-05-09 13:21:32,116 - INFO - 状态码: 200
+2024-05-09 13:21:32,116 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:32,116 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:21:32,558 - INFO - 开始获取航班数据
+2024-05-09 13:21:32,559 - INFO - 正在发送请求
+2024-05-09 13:21:33,694 - INFO - 状态码: 200
+2024-05-09 13:21:33,694 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:33,696 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:33,696 - INFO - 开始获取航班数据
+2024-05-09 13:21:33,696 - INFO - 正在发送请求
+2024-05-09 13:21:34,730 - INFO - 状态码: 200
+2024-05-09 13:21:34,730 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:34,731 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:34,731 - INFO - 开始获取航班数据
+2024-05-09 13:21:34,732 - INFO - 正在发送请求
+2024-05-09 13:21:36,546 - INFO - 状态码: 200
+2024-05-09 13:21:36,547 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:36,569 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:36,569 - INFO - 开始获取航班数据
+2024-05-09 13:21:36,569 - INFO - 正在发送请求
+2024-05-09 13:21:38,555 - INFO - 状态码: 200
+2024-05-09 13:21:38,555 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:38,557 - INFO - 请求下一页，继续获取航班数据
+2024-05-09 13:21:38,557 - INFO - 开始获取航班数据
+2024-05-09 13:21:38,557 - INFO - 正在发送请求
+2024-05-09 13:21:39,608 - INFO - 状态码: 200
+2024-05-09 13:21:39,608 - INFO - 请求成功，正在写入响应到文件
+2024-05-09 13:21:39,608 - INFO - 写入完成，结束获取航班数据
+2024-05-09 13:21:40,289 - INFO - 192.168.43.170 - - [09/May/2024 13:21:40] "POST /input_airport_code HTTP/1.1" 200 -
