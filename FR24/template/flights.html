@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>航班信息</title>
+    <style>
+        /* 你可以在这里添加CSS样式来美化你的表格 */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<script>
+    function switchTables() {
+        var arrivals = document.getElementById("arrivals");
+        var departures = document.getElementById("departures");
+        if (arrivals.style.display === "none") {
+            arrivals.style.display = "block";
+            departures.style.display = "none";
+        } else {
+            arrivals.style.display = "none";
+            departures.style.display = "block";
+        }
+    }
+    </script>
+<body>
+    <button onclick="switchTables()">切换航班信息</button>
+    <div id="arrivals" style="display: block;">
+        <h1>{{ airport_code }}到达航班信息</h1>
+        <h2>可能感兴趣的航班</h2>
+        {{ a_i_table|safe }}  <!-- 使用Jinja2的safe过滤器来插入HTML代码 -->
+        <h2>可能一般的航班</h2>
+        {{ a_n_table|safe }}  
+    </div>
+    <div id="departures" style="display: none;">
+        <h1>{{ airport_code }}出发航班信息</h1>
+        <h2>可能感兴趣的航班</h2>
+        {{ d_i_table|safe }}  
+        <h2>可能一般的航班</h2>
+        {{ d_n_table|safe }}  
+    </div>
+</body>
+</html>

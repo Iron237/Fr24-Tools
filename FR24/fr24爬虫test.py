@@ -60,8 +60,8 @@ def get_flight_data(airport_code,mode,file_path_with_ip):
         json.dump(all_flights, f, indent=4)  # 将航班数据写入JSON文件
     return page
 
-def extract_departure_aircraft_type(filename, workbook, filter):
-    with open(filename, 'r') as f:
+def extract_departure_aircraft_type(data_path, workbook, filter):
+    with open(data_path, 'r') as f:
         all_flights = json.load(f)
         
     interested_aircraft = []
@@ -104,8 +104,8 @@ def extract_departure_aircraft_type(filename, workbook, filter):
         
         sheet.append([flight_number, departure_time, destination_airport, registration if registration else 'None', code if code else None])
 
-def extract_arrival_aircraft_type(filename, workbook, filter):
-    with open(filename, 'r') as f:
+def extract_arrival_aircraft_type(data_path, workbook, filter):
+    with open(data_path, 'r') as f:
         all_flights = json.load(f)
         
     interested_aircraft = []
@@ -149,8 +149,28 @@ def extract_arrival_aircraft_type(filename, workbook, filter):
         sheet.append([flight_number, arrival_time, origin_airport, registration if registration else 'None', code if code else None])
 
 
+def run(airport_code, data_mode, jet_type,ip_address):#返回json的函数
+    file_path_with_ip = f'{file_path}\\datas\\temp\\{ip_address}\\{airport_code}'
+    # for d in range(len(data_mode)):
+    #     pages = get_flight_data(airport_code, data_mode[d],file_path_with_ip)
+    #     #判断请求是否太多，是则进行休眠
+    #     if not isinstance(pages, int): #如果返回的不是整数（返回的是尝试失败过多）
+    #         return "Error: Too many consecutive failures", 500 #返回错误信息
+    #     elif pages > 15:
+    #         time.sleep(3)
+    #         print('hold on')
+    #     else:
+    #         continue
+    #写入数据到excel
+    workbook = openpyxl.Workbook()
+    extract_departure_aircraft_type(f'{file_path_with_ip}\\{airport_code}_departures_flights.json', workbook, jet_type)
+    extract_arrival_aircraft_type(f'{file_path_with_ip}\\{airport_code}_arrivals_flights.json', workbook, jet_type)
+    # del workbook[workbook.sheetnames[0]]
+    # final_path = f'{file_path_with_ip}\\{output_filename}'
+    # workbook.save(f'{final_path}')
+    return f'{file_path_with_ip}\\{airport_code}_arrivals_flights.json',f'{file_path_with_ip}\\{airport_code}_departures_flights.json'
 
-def run(airport_code, data_mode, jet_type, output_filename,ip_address):
+'''def run(airport_code, data_mode, jet_type, output_filename,ip_address):#返回excel的函数
     file_path_with_ip = f'{file_path}\\datas\\temp\\{ip_address}\\{airport_code}'
     for d in range(len(data_mode)):
         pages = get_flight_data(airport_code, data_mode[d],file_path_with_ip)
@@ -162,15 +182,15 @@ def run(airport_code, data_mode, jet_type, output_filename,ip_address):
             print('hold on')
         else:
             continue
-    #写入数据到excel
+    # 写入数据到excel
     workbook = openpyxl.Workbook()
     extract_departure_aircraft_type(f'{file_path_with_ip}\\{airport_code}_departures_flights.json', workbook, jet_type)
     extract_arrival_aircraft_type(f'{file_path_with_ip}\\{airport_code}_arrivals_flights.json', workbook, jet_type)
     del workbook[workbook.sheetnames[0]]
     final_path = f'{file_path_with_ip}\\{output_filename}'
     workbook.save(f'{final_path}')
-    return final_path
-
+    return f'{file_path_with_ip}\\{airport_code}_departures_flights.json'''
+    
 # #测试数据
 # airport_code = "xmn"
 # data_mode = ['departures','arrivals']
@@ -182,4 +202,3 @@ def run(airport_code, data_mode, jet_type, output_filename,ip_address):
 
 # 路径
 # file_path = os.path.abspath('fr24爬虫test.py')
-

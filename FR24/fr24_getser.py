@@ -1,10 +1,13 @@
-from flask import Flask, request, jsonify,send_file, render_template
-import fr24爬虫test as frpc
+from flask import Flask, request, jsonify, send_file, render_template, redirect
 import datetime
-import time
+import json
 import os
 from flask_limiter import Limiter
-import pickle #保存字典
+import pandas as pd
+
+import fr24爬虫test as frpc
+import pickle  # 保存字典
+import streamlit as st  # 绘图
 #全局信息
 file_path = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, template_folder=f'{file_path}\\template')
@@ -18,12 +21,16 @@ timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H.%M.%S')
 def get_remote_address():
     return request.remote_addr
 limiter = Limiter(app=app, key_func=get_remote_address) # type: ignore
-#机型筛选
+#机型筛选依据
 jet_type = ["A33",'A34',"A35","A38","B78","B77","B76","B74","B75","B78","C9",'74','76','75','77','78','33','35','380','C27']
+
+#---------------------------------------------------------------
 #返回首页HTML
 @app.route('/')
 def home():
     return render_template('FR24_flight_data.html')
+
+#---------------------------------------------------------------
 
 #接受HTTP请求输入机场代码
 @app.route('/input_airport_code', methods=['POST'])
@@ -52,10 +59,12 @@ def input_airport_code():
     airport_code = request.form['airport_code'].upper()
     output_filename = f'{airport_code}_{timestamp}.xlsx'
 
-    return get_flights(airport_code,output_filename)
+    return jsonify({'redirect': f'/{airport_code}/flights'})
+
+#---------------------------------------------------------------
 
 #获取航班数据并返回文件路径
-def get_flights(apcode,output_filename):
+'''def get_flights(apcode,output_filename):#请求excel文件的函数
     
     ip_address = request.remote_addr
     #接受HTTP请求
@@ -73,7 +82,85 @@ def get_flights(apcode,output_filename):
         return send_file(f'{final_path}', as_attachment=True)
     else:
         return jsonify({"message": "请稍等片刻"})
+'''
 
+def get_flights(apcode):#调用爬虫请求json文件
+    
+    ip_address = request.remote_addr
+    #接受HTTP请求
+    # airport_code = request.args.get('airport_code', default='', type=str)
+    # data = request.args.getlist('mode')
+    
+    data_mode = ['departures', 'arrivals']
+    # 调用你的get_flight_data函数
+    final_a_path,final_d_path = frpc.run(apcode, data_mode, jet_type,ip_address)
+    
+    # if isinstance(final_a_path, tuple) and final_a_path[1] == 500:  # 检查到达数据路径是否返回了错误信息
+    #     return jsonify({"message": final_a_path[0]}), 500  # 返回错误信息
+    # elif isinstance(final_d_path, tuple) and final_d_path[1] == 500:  # 检查出发数据路径是否返回了错误信息
+    #     return jsonify({"message": final_d_path[0]}), 500  # 返回错误信息
+    # if final_a_path and final_d_path:
+    
+    print(f'{final_a_path},{final_d_path}')
+    return final_a_path,final_d_path#输出2个json文件的路径
+
+#---------------------------------------------------------------
+
+@app.route('/<apcode>/flights')
+def flights(apcode):#与html交互
+    arrivals_data_path, departures_data_path = get_flights(apcode)
+    if arrivals_data_path is None or departures_data_path is None:
+        return "Error: No flight data available for the given airport code", 400
+    
+    a_i_table_html,a_n_table_html = to_DataFrame(arrivals_data_path)
+    
+    d_i_table_html,d_n_table_html = to_DataFrame(departures_data_path)
+    
+    return render_template('flights.html', a_i_table=a_i_table_html, a_n_table=a_n_table_html,airport_code=apcode, d_i_table=d_i_table_html, d_n_table=d_n_table_html)
+
+
+def process_flights_data(flight_data_path):#数据筛选
+    if flight_data_path[-21:-13] != 'arrivals':#判断json数据是or到达
+        word = 'destination'
+        status = 'departure'
+    else:
+        word = 'origin'
+        status = 'arrival'
+    interested_aircraft = []
+    normal_aircraft = []
+    with open(str(flight_data_path), 'r') as f:
+        all_flights = json.load(f)
+    for flight in all_flights:#遍历获取的航班信息
+        model_code = flight['flight']['aircraft']['model']['code']
+        arrivals_time = flight['flight']['time']['scheduled'][f'{status}']
+    # 转化为北京时间
+        arrivals_time = datetime.datetime.fromtimestamp(arrivals_time).strftime('%Y-%m-%d %H:%M:%S')
+        
+        if any( model_code is None or substring in model_code for substring in jet_type):#分类航班
+                flight_number = flight['flight']['identification']['number']['default']
+                arrival_time = datetime.datetime.fromtimestamp(flight['flight']['time']['scheduled'][f'{status}']).strftime('%Y-%m-%d %H:%M:%S')
+                origin_airport = flight['flight']['airport'][f'{word}']['code']['iata']
+                registration = flight['flight']['aircraft']['registration']
+                code = flight['flight']['aircraft']['model']['code']
+                interested_aircraft.append([flight_number, arrival_time, origin_airport, registration if registration else 'None', code if code else None])
+        else:
+                flight_number = flight['flight']['identification']['number']['default']
+                arrival_time = datetime.datetime.fromtimestamp(flight['flight']['time']['scheduled'][f'{status}']).strftime('%Y-%m-%d %H:%M:%S')
+                origin_airport = flight['flight']['airport'][f'{word}']['code']['iata']
+                registration = flight['flight']['aircraft']['registration']
+                code = flight['flight']['aircraft']['model']['code']
+                normal_aircraft.append([flight_number, arrival_time, origin_airport, registration if registration else 'None', code if code else None])
+    return interested_aircraft, normal_aircraft
+
+def to_DataFrame(data_path):#绘制表格
+    a_interested_aircraft, a_normal_aircraft = process_flights_data(data_path)
+    # 将航班信息转换为DataFrame
+    idf = pd.DataFrame(a_interested_aircraft, columns=["航班号", "计划到达时间", "起飞地机场", "注册号", "机型"])
+    ndf = pd.DataFrame(a_normal_aircraft, columns=["航班号", "计划到达时间", "起飞地机场", "注册号", "机型"])
+    # 使用Flask绘制表格
+    a_i_table_html = idf.to_html(index=False)
+    a_n_table_html = ndf.to_html(index=False)
+    return a_i_table_html,a_n_table_html
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=1145, debug=True)
