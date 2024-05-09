@@ -22,5 +22,6 @@ Thumbs.db
 FR24/datas/temp/
 node_modules/
 FR24pj/
+# 忽略npm包管理文件
 package-lock.json
 package.json
