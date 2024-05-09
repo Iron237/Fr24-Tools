@@ -21,6 +21,6 @@ Thumbs.db
 # 忽略特定文件或文件夹
 FR24/datas/temp/
 node_modules/
-
+FR24pj/
 package-lock.json
 package.json
