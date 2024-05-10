@@ -11,9 +11,12 @@ import streamlit as st  # 绘图
 file_path = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, template_folder=f'{file_path}\\template')
 ip_counter = {}
+
 ip_counter_file = f'{file_path}\\dic\\ip_counter.pkl'
 if not os.path.exists(ip_counter_file):
     os.makedirs(os.path.dirname(ip_counter_file), exist_ok=True)
+    with open(ip_counter_file, 'wb') as f:
+        pickle.dump({}, f)
 # 获取当前时间
 timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H.%M.%S')
 #限制ip访问次数

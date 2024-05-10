@@ -23,6 +23,7 @@ FR24/datas/temp/
 node_modules/
 FR24pj/
 FR24/test_code/
+FR24/dic/
 # 特定文件
 package-lock.json
 package.json
