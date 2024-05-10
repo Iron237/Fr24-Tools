@@ -4,8 +4,7 @@ import json
 import os
 from flask_limiter import Limiter
 import pandas as pd
-
-import fr24爬虫test as frpc
+import main as frpc
 import pickle  # 保存字典
 import streamlit as st  # 绘图
 #全局信息
@@ -22,7 +21,7 @@ def get_remote_address():
     return request.remote_addr
 limiter = Limiter(app=app, key_func=get_remote_address) # type: ignore
 #机型筛选依据
-jet_type = ["A33",'A34',"A35","A38","B78","B77","B76","B74","B75","B78","C9",'74','76','75','77','78','33','35','380','C27']
+jet_type = ["A33",'A34',"A35","A38","B78","B77","B76","B74","B75","B78","C9",'74','76','75','77','78','33','35','380','388','389','C27']
 
 #返回首页HTML
 @app.route('/')
@@ -123,12 +122,18 @@ def process_flights_data(flight_data_path):#数据筛选
     with open(str(flight_data_path), 'r') as f:
         all_flights = json.load(f)
     for flight in all_flights:#遍历获取的航班信息
-        model_code = flight['flight']['aircraft']['model']['code']
-        arrivals_time = flight['flight']['time']['scheduled'][f'{status}']
-    # 转化为北京时间
-        arrivals_time = datetime.datetime.fromtimestamp(arrivals_time).strftime('%Y-%m-%d %H:%M:%S')
-        
-        if any( model_code is None or substring in model_code for substring in jet_type):#分类航班
+        try:
+            model_code = flight['flight']['aircraft']['model']['code']
+        except:
+            if flight['flight']['aircraft'] == None:#航班aircraft信息为空
+                flight_number = flight['flight']['identification']['number']['default']
+                arrival_time = datetime.datetime.fromtimestamp(flight['flight']['time']['scheduled'][f'{status}']).strftime('%Y-%m-%d %H:%M:%S')
+                origin_airport = flight['flight']['airport'][f'{word}']['code']['iata']
+                registration = None
+                code = None
+                interested_aircraft.append([flight_number, arrival_time, origin_airport, registration if registration else 'None', code if code else None])
+            continue
+        if any( model_code is None or substring in model_code for substring in jet_type):#按照机型分类航班
                 flight_number = flight['flight']['identification']['number']['default']
                 arrival_time = datetime.datetime.fromtimestamp(flight['flight']['time']['scheduled'][f'{status}']).strftime('%Y-%m-%d %H:%M:%S')
                 origin_airport = flight['flight']['airport'][f'{word}']['code']['iata']

@@ -31,7 +31,7 @@ def get_flight_data(airport_code,mode,file_path_with_ip):
         response = requests.get(url, proxies=proxies, headers=headers)
         logging.info("状态码: %s", response.status_code)
         # print("状态码:", response.status_code)
-        
+        fail_count = 0
         if response.status_code == 200:
             logging.info("请求成功，正在写入响应到文件")
             print("请求成功")
@@ -68,7 +68,11 @@ def extract_departure_aircraft_type(data_path, workbook, filter):
     normal_aircraft = []
     
     for flight in all_flights:
-        model_code = flight['flight']['aircraft']['model']['code']
+        try:
+            model_code = flight['flight']['aircraft']['model']['code']
+        except:
+            print(flight['flight']['aircraft']['model'])
+            continue
         departure_time = flight['flight']['time']['scheduled']['departure']
         # 转化为北京时间
         departure_time = datetime.datetime.fromtimestamp(departure_time).strftime('%Y-%m-%d %H:%M:%S')
@@ -151,16 +155,16 @@ def extract_arrival_aircraft_type(data_path, workbook, filter):
 
 def run(airport_code, data_mode,ip_address):#返回json的函数
     file_path_with_ip = f'{file_path}\\datas\\temp\\{ip_address}\\{airport_code}'
-    for d in range(len(data_mode)):
-        pages = get_flight_data(airport_code, data_mode[d],file_path_with_ip)
-        #判断请求是否太多，是则进行休眠
-        if not isinstance(pages, int): #如果返回的不是整数（返回的是尝试失败过多）
-            return "Error: Too many consecutive failures", 500 #返回错误信息
-        elif pages > 15:
-            time.sleep(3)
-            print('hold on')
-        else:
-            continue
+    # for d in range(len(data_mode)):
+    #     pages = get_flight_data(airport_code, data_mode[d],file_path_with_ip)
+    #     #判断请求是否太多，是则进行休眠
+    #     if not isinstance(pages, int): #如果返回的不是整数（返回的是尝试失败过多）
+    #         return "Error: Too many consecutive failures", 500 #返回错误信息
+    #     elif pages > 15:
+    #         time.sleep(3)
+    #         print('hold on')
+    #     else:
+    #         continue
 
     return f'{file_path_with_ip}\\{airport_code}_arrivals_flights.json',f'{file_path_with_ip}\\{airport_code}_departures_flights.json'
 
