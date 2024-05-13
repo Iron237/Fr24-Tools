@@ -6,25 +6,22 @@ from flask_limiter import Limiter
 import pandas as pd
 import main as frpc
 import pickle  # 保存字典
-import streamlit as st  # 绘图
+import streamlit as st  # 绘图14
 #全局信息
 file_path = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, template_folder=f'{file_path}\\template')
 ip_counter = {}
 
 ip_counter_file = f'{file_path}\\dic\\ip_counter.pkl'
-if not os.path.exists(ip_counter_file):
-    os.makedirs(os.path.dirname(ip_counter_file), exist_ok=True)
-    with open(ip_counter_file, 'wb') as f:
-        pickle.dump({}, f)
+
 # 获取当前时间
-timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H.%M.%S')
+time = datetime.datetime.now().strftime('%Y-%m-%d %H.%M.%S')
 #限制ip访问次数
 def get_remote_address():
     return request.remote_addr
 limiter = Limiter(app=app, key_func=get_remote_address) # type: ignore
 #机型筛选依据
-jet_type = ["A33",'A34',"A35","A38","B78","B77","B76","B74","B75","B78","C9",'74','76','75','77','78','33','35','380','388','389','C27']
+jet_type = ["A33",'A34',"A35","A38","B78","B77","B76","B74","B75","B78","AJ21","C9",'74','76','75','77','78','33','35','380','388','389','C27']
 
 #返回首页HTML
 @app.route('/')
@@ -56,30 +53,11 @@ def input_airport_code():
         return "Invalid airport code", 400
     #转大写
     airport_code = request.form['airport_code'].upper()
-    output_filename = f'{airport_code}_{timestamp}.xlsx'
+    
 
     return jsonify({'redirect': f'/{airport_code}/flights'})
 
 #获取航班数据并返回文件路径
-'''def get_flights(apcode,output_filename):#请求excel文件的函数
-    
-    ip_address = request.remote_addr
-    #接受HTTP请求
-    # airport_code = request.args.get('airport_code', default='', type=str)
-    # data = request.args.getlist('mode')
-    
-    data_mode = ['departures', 'arrivals']
-    # 调用你的get_flight_data函数
-    final_path = frpc.run(apcode, data_mode, jet_type, output_filename,ip_address)
-    if isinstance(final_path, tuple) and final_path[1] == 500:  # 检查是否返回了错误信息
-        return jsonify({"message": final_path[0]}), 500  # 返回错误信息
-
-    if final_path:
-        print(f'{final_path}')
-        return send_file(f'{final_path}', as_attachment=True)
-    else:
-        return jsonify({"message": "请稍等片刻"})
-'''
 
 def get_flights(apcode):#调用爬虫请求json文件
     
@@ -101,6 +79,8 @@ def get_flights(apcode):#调用爬虫请求json文件
     print(f'{final_a_path},{final_d_path}')
     return final_a_path,final_d_path#输出2个json文件的路径
 
+
+
 @app.route('/<apcode>/flights')
 def flights(apcode):#与html交互
     arrivals_data_path, departures_data_path = get_flights(apcode)
@@ -112,6 +92,8 @@ def flights(apcode):#与html交互
     d_i_table_html,d_n_table_html = to_DataFrame(departures_data_path)
     
     return render_template('flights.html', a_i_table=a_i_table_html, a_n_table=a_n_table_html,airport_code=apcode, d_i_table=d_i_table_html, d_n_table=d_n_table_html)
+def redirect_to_flights(apcode):#重定向到航班数据页面
+    return redirect(f'/{apcode}/excel')
 
 def process_flights_data(flight_data_path):#数据筛选
     if flight_data_path[-21:-13] != 'arrivals':#判断json数据是or到达
@@ -169,5 +151,26 @@ def to_DataFrame(data_path):#绘制表格
     a_n_table_html = ndf.to_html(index=False)
     return a_i_table_html,a_n_table_html
 
+
+
+@app.route('/<apcode>/excel')
+def get_excel(apcode):#请求excel文件的函数
+    ip_address = request.remote_addr
+    #接受HTTP请求
+    # airport_code = request.args.get('airport_code', default='', type=str)
+    # data = request.args.getlist('mode')
+    
+    # 调用你的get_flight_data函数
+    final_path = frpc.gen_excel(apcode,ip_address,time)
+    if isinstance(final_path, tuple) and final_path[1] == 500:  # 检查是否返回了错误信息
+        return jsonify({"message": final_path[0]}), 500  # 返回错误信息
+
+    if final_path:
+        print(f'{final_path}')
+        return send_file(f'{final_path}', as_attachment=True)
+    else:
+        return jsonify({"message": "请稍等片刻"})
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=1145, debug=True)
+    

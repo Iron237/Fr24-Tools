@@ -5,10 +5,7 @@ import openpyxl
 import os
 import time
 import logging
-from openpyxl.styles import Font, Color, Alignment, PatternFill
-from openpyxl import load_workbook
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',encoding='utf-8')
-jet_type = ["A33",'A34',"A35","A38","B78","B77","B76","B74","B75","B78","AJ21","C9",'74','76','75','77','78','33','35','380','388','389','C27']
 
 file_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -155,7 +152,8 @@ def extract_arrival_aircraft_type(data_path, workbook, filter):
         
         sheet.append([flight_number, arrival_time, origin_airport, registration if registration else 'None', code if code else None])
 
-def run(airport_code, data_mode,ip_address):#返回json的函数
+
+def getjson(airport_code, data_mode,ip_address):#返回json的函数
     file_path_with_ip = f'{file_path}\\datas\\temp\\{ip_address}\\{airport_code}'
     for d in range(len(data_mode)):
         pages = get_flight_data(airport_code, data_mode[d],file_path_with_ip)
@@ -170,18 +168,27 @@ def run(airport_code, data_mode,ip_address):#返回json的函数
 
     return f'{file_path_with_ip}\\{airport_code}_arrivals_flights.json',f'{file_path_with_ip}\\{airport_code}_departures_flights.json'
 
-def gen_excel(airport_code,ip_address,time):#返回excel的函数
+'''def run(airport_code, data_mode, jet_type, output_filename,ip_address):#返回excel的函数
     file_path_with_ip = f'{file_path}\\datas\\temp\\{ip_address}\\{airport_code}'
+    for d in range(len(data_mode)):
+        pages = get_flight_data(airport_code, data_mode[d],file_path_with_ip)
+        #判断请求是否太多，是则进行休眠
+        if not isinstance(pages, int): #如果返回的不是整数（返回的是尝试失败过多）
+            return "Error: Too many consecutive failures", 500 #返回错误信息
+        elif pages > 15:
+            time.sleep(3)
+            print('hold on')
+        else:
+            continue
     # 写入数据到excel
     workbook = openpyxl.Workbook()
     extract_departure_aircraft_type(f'{file_path_with_ip}\\{airport_code}_departures_flights.json', workbook, jet_type)
     extract_arrival_aircraft_type(f'{file_path_with_ip}\\{airport_code}_arrivals_flights.json', workbook, jet_type)
     del workbook[workbook.sheetnames[0]]
-    excel_path = f'{file_path_with_ip}'
-    workbook.save(f'{excel_path}\\{airport_code}_{time}.xlsx')
-    return f'{excel_path}\\{airport_code}_{time}.xlsx'
-
-
+    final_path = f'{file_path_with_ip}\\{output_filename}'
+    workbook.save(f'{final_path}')
+    return f'{file_path_with_ip}\\{airport_code}_departures_flights.json'''
+    
 # #测试数据
 # airport_code = "xmn"
 # data_mode = ['departures','arrivals']
